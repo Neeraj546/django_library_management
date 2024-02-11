@@ -28,6 +28,7 @@ urlpatterns = [
     path('', Welcome.as_view(), name='welcome'),
     path('admin/', admin.site.urls),
     path('api/users/', include('user.urls')),
+    path('api/library/', include('library.urls')),
     # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     # path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
