@@ -4,7 +4,7 @@ from library.models import Book
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = ('id', 'title', 'author', 'libraries')
+        fields = ('id', 'title', 'created_by', 'author', 'libraries')
 
     def validate_title(self, value):
         if len(value) < 2:

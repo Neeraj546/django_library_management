@@ -18,7 +18,7 @@ class CreateLibraryView(APIView):
         serializer = LibrarySerializer(data=request.data)
         if not serializer.is_valid():
             return Response({"message": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-        serializer.save()
+        serializer.save(created_by=request.user)
         return Response({"message": "Library Created", "data": serializer.data}, status=status.HTTP_201_CREATED)
     
     def put(self, request, id):

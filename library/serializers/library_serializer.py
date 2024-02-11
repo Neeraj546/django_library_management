@@ -4,7 +4,7 @@ from library.models import Library
 class LibrarySerializer(serializers.ModelSerializer):
     class Meta:
         model = Library
-        fields = ('id', 'name', 'books')
+        fields = ('id', 'name', 'created_by', 'books')
 
     def validate_name(self, value):
         if len(value) < 2:
