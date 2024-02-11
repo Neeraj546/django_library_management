@@ -12,3 +12,5 @@
 <pre>python manage.py migrate</pre>
 <p><b>Run Server</b></p>
 <pre>python manage.py runserver</pre>
+<p><b>Database Diagram</b></p>
+https://dbdiagram.io/e/65c91b90ac844320aee81361/65c91bbcac844320aee81537
