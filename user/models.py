@@ -53,6 +53,7 @@ class User(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    is_confirmed = models.BooleanField(default=False)
 
     objects = UserManager()
 
@@ -70,6 +71,11 @@ class User(AbstractBaseUser):
     def has_module_perms(self, app_label):
         "Does the user have permissions to view the app `app_label`?"
         # Simplest possible answer: Yes, always
+        return True
+    
+    def confirm_user(self):
+        self.is_confirmed = True
+        self.save()
         return True
 
     @property
